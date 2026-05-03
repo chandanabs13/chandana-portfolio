@@ -1,0 +1,109 @@
+.header__container--list1,
+.header__container--list2,
+.header__container--list3 {
+  display: flex !important;
+  padding: 0px !important;
+  align-items: center;
+}
+.header__container--list1 > a,
+.header__container--list2 > a,
+.header__container--list3 > li > a {
+  text-decoration: none;
+}
+
+.header__container--list1 > a > li,
+.header__container--list2 > a > li,
+.header__container--list3 > li {
+  margin: 0 30px;
+  list-style: none;
+  font-weight: 600;
+  color: black;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.header__container {
+  background-color: white;
+  padding: 10px 0px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__container--list1 > li {
+  font-size: 24px;
+  font-weight: 800;
+  cursor: pointer;
+  color: black;
+  transition: all 0.3s ease;
+}
+.header__container--list3 > li > a {
+  color: white;
+  background: black;
+  padding: 5px 15px;
+  border-radius: 40px;
+}
+.header__container--list3 > li:hover {
+  cursor: pointer;
+}
+.header__container--list1,
+.header__container--list2,
+.header__container--list3 {
+  display: flex !important;
+  padding: 0px !important;
+  align-items: center;
+}
+.header__container--list1 > li,
+.header__container--list2 > li,
+.header__container--list3 > li {
+  margin: 0 30px;
+  list-style: none;
+  font-weight: 600;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.header__container--list2 > a > li:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  color: rgba(84, 37, 204, 0.909);
+  font-size: 20px;
+  font-weight: 800;
+}
+.header__container {
+  background-color: white;
+  border-radius: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__container--list1 > a > li {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.header__container--list3 > li {
+  color: white;
+  background: black;
+  padding: 5px 15px;
+  border-radius: 40px;
+}
+.header__container--list3 > li:hover {
+  cursor: pointer;
+}
+.header__container--list1 > a > li:hover {
+  background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 2s linear infinite;
+}
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 300% center;
+  }
+}
