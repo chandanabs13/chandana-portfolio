@@ -191,3 +191,150 @@
     flex-direction: column;
   }
 }
+/* FIX MOBILE HERO SECTION */
+@media (max-width: 768px) {
+  .hero {
+    padding: 16px;
+  }
+
+  .hero__container {
+    display: flex;
+    flex-direction: column !important;
+    gap: 20px;
+    align-items: center;
+  }
+
+  /* IMAGE FIRST */
+  .hero__image-container {
+    order: 1;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* CONTENT SECOND */
+  .hero__content {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero__content h1 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+
+  .hero__content p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 12px;
+    max-width: 100%;
+  }
+
+  /* STATS GRID */
+  .stats {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    margin-top: 22px;
+    width: 100%;
+  }
+
+  .stat__card {
+    width: 100%;
+    padding: 14px;
+    gap: 12px;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .stat__info {
+    overflow: hidden;
+  }
+
+  .stat__info h5 {
+    font-size: 20px;
+    margin: 0;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .stat__info span {
+    font-size: 13px;
+    white-space: normal;
+    word-break: break-word;
+    opacity: 0.8;
+  }
+
+  /* BUTTONS */
+  .hero__actions {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .hero__actions > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero__actions a {
+    width: 100%;
+    margin-right: 0 !important;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  /* SKILLS */
+  /* AUTO MOVING SKILLS */
+  .skills {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .skills:hover {
+    animation-play-state: paused;
+  }
+
+  .skill_container {
+    padding: 10px 20px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid grey;
+    color: #fff;
+    font-size: 15px;
+    display: inline-flex;
+    gap: 14px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* move left automatically */
+  .skills {
+    animation: scrollSkills 22s linear infinite;
+  }
+
+  @keyframes scrollSkills {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
