@@ -4,6 +4,7 @@ import "./index.css";
 import { motion } from "framer-motion";
 import { CalendarDays, Boxes, Zap, Globe } from "lucide-react";
 import { MdEmail } from "react-icons/md";
+import { useEffect, useState } from "react";
 
 const stats = [
   {
@@ -45,6 +46,21 @@ const fadeUp = {
 };
 
 const Body = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  const emailLink = isMobile ? "mailto:chandanasuresh.1310@gmail.com" : "https://mail.google.com/mail/?view=cm&to=chandanasuresh.1310@gmail.com";
+
   return (
     <section className="hero">
       ¯¸
@@ -86,19 +102,19 @@ const Body = () => {
           {/* CTA */}
           <div className="hero__actions ">
             <div className="">
-              <a href="https://www.linkedin.com/in/chandana-trilok-236ab7209/" target="_blank" className="download">
+              <a href="https://linkedin.com/in/chandana-trilok-236ab7209" target="_blank" className="download">
                 <span>
                   <FaLinkedin className="icon mx-1" />
                 </span>
                 LinkedIn
               </a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chandanasuresh.1310@gmail.com" target="_blank" rel="noreferrer" className="contact">
+              <a href={emailLink} target={isMobile ? "_self" : "_blank"} rel="noreferrer" className="contact">
                 <span>
-                  <MdEmail className="icon mx-2" />
+                  <MdEmail className="icon me-2" />
                 </span>
                 Contact Me
               </a>
-              <a href="https://github.com/settings/profile" target="_blank" className="contact">
+              <a href="https://github.com/chandanabs13" target="_blank" className="contact">
                 <span>
                   <FaGithub className="icon me-2" />
                 </span>
@@ -110,54 +126,56 @@ const Body = () => {
       </div>
       {/* SKILLS */}
       <div className="skills">
-        <div className="skill_container">
+        <a className="skill_container" href="https://react.dev/" target="_blank" rel="noreferrer">
+          {" "}
           <div>
             <img src="/images/1.png" width={40} height={40}></img>
           </div>
           <div>React.js</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://nextjs.org/docs" target="_blank" rel="noreferrer">
           <div>
             <img src="/images/2.webp" width={40} height={40}></img>
           </div>
           <div>Next.js</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://www.typescriptlang.org/docs/" target="_blank" rel="noreferrer">
           <div>
             <img src="/images/3.png" width={40} height={40}></img>
           </div>
           <div>TypeScript</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
           <div>
             <img src="/images/4.png" width={40} height={40}></img>
           </div>
           <div>JavaScript</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://tailwindcss.com/" target="_blank" rel="noreferrer">
           <div>
             <img src="/images/5.png" width={40} height={40}></img>
           </div>
           <div>Tailwinf CSS</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://redux.js.org/" target="_blank" rel="noreferrer">
+          {" "}
           <div>
             <img src="/images/6.png" width={40} height={40}></img>
           </div>
           <div>Redux Toolkit</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://nodejs.org/docs/latest/api/" target="_blank" rel="noreferrer">
           <div>
             <img src="/images/7.png" width={40} height={40}></img>
           </div>
           <div>Node.js</div>
-        </div>
-        <div className="skill_container">
+        </a>
+        <a className="skill_container" href="https://git-scm.com/docs" target="_blank" rel="noreferrer">
           <div>
             <img src="/images/8.png" width={40} height={40}></img>
           </div>
           <div>Git</div>
-        </div>
+        </a>
       </div>
     </section>
   );
